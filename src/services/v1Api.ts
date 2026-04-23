@@ -1,9 +1,9 @@
 import axios from 'axios';
 import type { AxiosInstance } from 'axios';
 
-const createV1Instance = (port: number): AxiosInstance => {
+const createV1Instance = (): AxiosInstance => {
   const instance = axios.create({
-    baseURL: `http://localhost:${port}/v1`,
+    baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/v1',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -41,12 +41,12 @@ const createV1Instance = (port: number): AxiosInstance => {
 };
 
 // Export instances for different services
-export const divisionApi = createV1Instance(3000);
-export const moduleApi = createV1Instance(3000);
-export const lessonApi = createV1Instance(3000);
-export const tagApi = createV1Instance(3000);
-export const platformApi = createV1Instance(3000);
-export const problemApi = createV1Instance(3000);
+export const divisionApi = createV1Instance();
+export const moduleApi = createV1Instance();
+export const lessonApi = createV1Instance();
+export const tagApi = createV1Instance();
+export const platformApi = createV1Instance();
+export const problemApi = createV1Instance();
 
 // Default export stays as divisionApi for backward compatibility if needed, 
 // though refactoring existing code to use specific exports is better.

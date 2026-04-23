@@ -1,0 +1,128 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-color);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.05) 0px, transparent 50%);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.header {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-xl);
+  z-index: 90;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0 var(--space-md);
+  width: 400px;
+  height: 40px;
+  transition: var(--transition-fast);
+}
+
+.searchBar:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-glow);
+}
+
+.searchIcon {
+  color: var(--text-dim);
+  margin-right: var(--space-sm);
+}
+
+.searchBar input {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  width: 100%;
+  outline: none;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.actionBtn {
+  position: relative;
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.actionBtn:hover {
+  color: var(--text-main);
+}
+
+.badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  border: 2px solid var(--surface-color);
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding-left: var(--space-lg);
+  border-left: 1px solid var(--border-color);
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.userName {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.userRole {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.content {
+  flex: 1;
+  padding: var(--space-xl);
+  overflow-y: auto;
+  position: relative;
+}
